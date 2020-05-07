@@ -1,0 +1,113 @@
+<h3>Product Entry</h3>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <form [formGroup]="productsaveform" #saveproduct (ngSubmit)="saveProduct(saveProduct)">  
+          <div class="form-group">  
+              <label for="name">Product ID</label>  
+              <input type="text" class="form-control"  formControlName="product_id" data-toggle="tooltip"   
+                 data-placement="right" title="Enter Product ID" >  
+              <div class="alert alert-danger" *ngIf = "(ProductID.touched) && (ProductID.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="ProductID.errors.required">Product ID is Required</span>  
+                    <span *ngIf = "ProductID.errors.minlength"> MinLength Error    </span>
+                    <span *ngIf = "ProductID.errors.pattern"> Product ID should be alfanumeric starts with a digit    </span>                     
+                </div>  
+          </div>  
+    
+          <div class="form-group">  
+              <label for="name">Product Name</label>  
+              <input type="text" class="form-control" formControlName="productName"   
+                data-toggle="tooltip" data-placement="right" title="Enter Product Name">  
+                <div class="alert alert-danger" *ngIf = "(ProductName.touched) && (ProductName.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="ProductName.errors.required">Product name is Required</span>                       
+                </div>  
+          </div>  
+
+          <div class="form-group">  
+            <label for="colour">Colour</label>  
+            <input type="text" class="form-control" formControlName="colour"   
+              data-toggle="tooltip" data-placement="right" title="Enter Product Colour">  
+              <div class="alert alert-danger" *ngIf = "(Colour.touched) && (Colour.invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="Colour.errors.required">Product colour is Required</span>                       
+              </div>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="dimension">Dimension</label>  
+            <input type="text" class="form-control" formControlName="dimension"   
+              data-toggle="tooltip" data-placement="right" title="Enter Product Dimension">  
+              <div class="alert alert-danger" *ngIf = "(Dimension.touched) && (Dimension.invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="Dimension.errors.required">Product dimension is Required</span>                       
+              </div>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="manufacturer">Manufacturer</label>  
+            <input type="text" class="form-control" formControlName="manufacturer"   
+              data-toggle="tooltip" data-placement="right" title="Enter Product Manufacturer">  
+              <div class="alert alert-danger" *ngIf = "(Manufacturer.touched) && (Manufacturer.invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="Manufacturer.errors.required">Product manufacturer is Required</span>                       
+              </div>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="price">Price</label>  
+            <input type="text" class="form-control" formControlName="price"   
+              data-toggle="tooltip" data-placement="right" title="Enter Product Price">  
+              <div class="alert alert-danger" *ngIf = "(Price.touched) && (Price.invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="Price.errors.required">Product price is Required</span>                       
+              </div>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="productCategory">ProductCategory</label>  
+            <input type="text" class="form-control" formControlName="productCategory"   
+              data-toggle="tooltip" data-placement="right" title="Enter Product Price">  
+              <div class="alert alert-danger" *ngIf = "(ProductCategory.touched) && (ProductCategory.invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="ProductCategory.errors.required">Product product Category is Required</span>                       
+              </div>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="quantity">Quantity</label>  
+            <input type="text" class="form-control" formControlName="quantity"   
+              data-toggle="tooltip" data-placement="right" title="Enter Product Quantity">  
+              <div class="alert alert-danger" *ngIf = "(Quantity.touched) && (Quantity.invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="Quantity.errors.required">Product quantity is Required</span>                       
+              </div>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="specifications">Specifications</label>  
+            <input type="text" class="form-control" formControlName="specifications"   
+              data-toggle="tooltip" data-placement="right" title="Enter Product Specifications">  
+              <div class="alert alert-danger" *ngIf = "(Specifications.touched) && (Specifications.invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="Specifications.errors.required">Product price is Required</span>                       
+              </div>  
+        </div> 
+          <button type="submit" class="btn btn-success">Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4">  
+      <div [hidden]="!submitted">  
+         <h4>Product Added SuccessFully!</h4>  
+         <button (click)="addProductForm()" class='btn btn-primary'>Add More Product</button>  
+      </div>        
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
